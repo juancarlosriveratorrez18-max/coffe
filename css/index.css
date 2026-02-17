@@ -54,7 +54,7 @@ header .navbar{
     background-color: #e2750f;
 }
 
-.nav-action{
+.nav-actions{
     display: flex;
     align-items: center;
     gap: 16px;
