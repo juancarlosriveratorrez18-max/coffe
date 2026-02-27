@@ -1,23 +1,27 @@
+@import url('https://fonts.googleapis.com/css2?family=Righteous&family=Poppins:wght@300;400;700&family=Ribeye&family=Lato:wght@400;700&display=swap');
+
 :root {
-  --bg-main:      #1a1a1a;  /* Fondo oscuro unificado */
-  --bg-navbar:    #3b141c;  /* Granate navbar */
-  --bg-card:      #4a1e1e;  
-  --bg-input:     #c8a8a8;
-  --accent:       #e2750f;  /* Naranja del menú */
+  --bg-main:      #1a1a1a;  /* Fondo oscuro profundo */
+  --bg-navbar:    #3b141c;  /* Color granate de la barra */
+  --bg-card:      #4a1e1e;  /* Fondo de la tarjeta de login */
+  --bg-input:     #c8a8a8;  /* Color de los inputs (rosado suave) */
+  --accent:       #e2750f;  /* Naranja oficial del carrito/botones */
   --accent-hover: #ff8c1a;
   --text-light:   #f5ede8;
   --text-muted:   #c8a8a8;
   --label-color:  #d4bfbf;
-  --font-display: 'Righteous', cursive;
   --font-logo:    'Ribeye', cursive;
+  --font-display: 'Righteous', cursive;
   --font-body:    'Poppins', sans-serif;
 }
 
-/* --- Reset & Base --- */
-*, *::before, *::after {
-  box-sizing: border-box;
+/* ==========================================================================
+   RESET Y ESTILOS BASE
+   ========================================================================== */
+* {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
 body {
@@ -28,102 +32,106 @@ body {
   overflow-x: hidden;
 }
 
-/* --- Navbar Unificada --- */
+button { cursor: pointer; border: none; outline: none; }
+a { text-decoration: none; }
+ul { list-style: none; }
+
+/* ==========================================================================
+   HEADER Y NAVBAR (UNIFICADO CON EL MENÚ)
+   ========================================================================== */
 header {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    z-index: 1000;
-    background-color: var(--bg-navbar);
-    box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  background-color: var(--bg-navbar);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.5);
 }
 
 .navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 15px 2%; /* Mismo margen que el menú */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 2%;
 }
 
 .nav-logo {
-    display: flex;
-    align-items: center;
-    text-decoration: none;
+  display: flex;
+  align-items: center;
 }
 
 .nav-text {
-    font-family: var(--font-logo);
-    color: white !important;
-    font-size: 28px;
-    margin-left: 10px;
-}
-
-.logo-emoji {
-    font-size: 24px;
+  font-family: var(--font-logo);
+  color: white !important;
+  font-size: 28px;
+  margin-left: 10px;
 }
 
 .nav-menu {
-    list-style: none;
-    display: flex;
-    gap: 30px;
+  display: flex;
+  gap: 30px;
 }
 
 .nav-link {
-    text-decoration: none;
-    color: white !important;
-    font-weight: 500;
-    font-size: 16px;
-    transition: 0.3s;
+  color: white !important;
+  font-weight: 500;
+  font-size: 16px;
+  transition: 0.3s;
 }
 
 .nav-link:hover {
-    color: var(--accent) !important;
+  color: var(--accent) !important;
 }
 
-/* Carrito y Efecto Hover Naranja */
+/* Iconos y Carrito con Efecto Naranja */
 .nav-icons {
-    display: flex;
-    align-items: center;
-    padding-right: 20px;
+  display: flex;
+  align-items: center;
+  padding-right: 20px;
+  gap: 15px;
 }
 
 .carrito {
-    position: relative;
-    font-size: 24px;
-    color: white;
-    cursor: pointer;
-    transition: color 0.3s ease, transform 0.2s ease;
+  position: relative;
+  font-size: 24px;
+  color: white;
+  cursor: pointer;
+  transition: color 0.3s ease, transform 0.2s ease;
 }
 
 .carrito:hover {
-    color: var(--accent); /* EFECTO NARANJA SOLICITADO */
-    transform: scale(1.1);
+  color: var(--accent) !important; /* EFECTO NARANJA AL PASAR EL MOUSE */
+  transform: scale(1.1);
 }
 
 #contador {
-    position: absolute;
-    top: -8px;
-    right: -10px;
-    background: var(--accent);
-    color: white;
-    font-size: 11px;
-    padding: 2px 6px;
-    border-radius: 50%;
-    font-weight: bold;
+  position: absolute;
+  top: -8px;
+  right: -10px;
+  background: var(--accent);
+  color: white;
+  font-size: 11px;
+  padding: 2px 6px;
+  border-radius: 50%;
+  font-weight: bold;
 }
 
-/* --- Main Content --- */
+/* ==========================================================================
+   CONTENEDOR PRINCIPAL (MAIN)
+   ========================================================================== */
 .main {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 120px 20px 60px; /* Padding superior para no quedar bajo la navbar */
+  padding: 120px 20px 60px; /* Evita que la navbar tape el contenido */
 }
 
-/* --- Login Card --- */
+/* ==========================================================================
+   TARJETA DE LOGIN
+   ========================================================================== */
 .login-card {
   background-color: var(--bg-card);
-  border-radius: 20px; /* Bordes más suaves */
+  border-radius: 20px;
   padding: 35px;
   width: 100%;
   max-width: 420px;
@@ -148,8 +156,8 @@ header {
   font-family: var(--font-display);
   font-size: 1.8rem;
   color: white;
-  text-align: center;
   margin-bottom: 5px;
+  text-align: center;
 }
 
 .card-subtitle {
@@ -159,7 +167,9 @@ header {
   text-align: center;
 }
 
-/* --- Form --- */
+/* ==========================================================================
+   FORMULARIO
+   ========================================================================== */
 .login-form {
   width: 100%;
   display: flex;
@@ -189,7 +199,11 @@ header {
   border-color: var(--accent);
 }
 
-.input-wrapper { position: relative; }
+/* Password wrapper */
+.input-wrapper {
+  position: relative;
+}
+
 .toggle-pw {
   position: absolute;
   right: 12px;
@@ -197,21 +211,43 @@ header {
   transform: translateY(-50%);
   background: none;
   border: none;
-  cursor: pointer;
   color: #555;
 }
 
+/* OPCIONES DE FORMULARIO (CORRECCIÓN COLOR AZUL) */
 .form-options {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   font-size: 0.8rem;
 }
 
+.remember-label {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  color: var(--text-muted);
+}
+
+/* SOLUCIÓN AL ENLACE AZUL */
+.forgot-link {
+  color: var(--text-muted) !important; /* ELIMINA EL AZUL DEL NAVEGADOR */
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.forgot-link:hover {
+  color: var(--accent) !important; /* SE PONE NARANJA AL HOVER */
+  text-decoration: underline;
+}
+
+/* BOTÓN LOGIN */
 .btn-login {
   background-color: var(--accent);
   color: white;
   padding: 14px;
   border-radius: 8px;
+  font-family: var(--font-display);
   font-size: 1.1rem;
   font-weight: bold;
   margin-top: 10px;
@@ -223,8 +259,23 @@ header {
   transform: translateY(-2px);
 }
 
-/* Redes Sociales */
-.social-buttons { display: flex; gap: 10px; }
+/* DIVIDER */
+.divider {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 10px 0;
+}
+
+.divider-line { flex: 1; height: 1px; background: rgba(255,255,255,0.2); }
+.divider-text { font-size: 0.75rem; color: var(--text-muted); }
+
+/* BOTONES SOCIALES */
+.social-buttons {
+  display: flex;
+  gap: 10px;
+}
+
 .btn-social {
   flex: 1;
   display: flex;
@@ -234,15 +285,43 @@ header {
   background: white;
   padding: 10px;
   border-radius: 8px;
+  color: #333;
   font-weight: bold;
   font-size: 0.85rem;
+  transition: 0.3s;
 }
 
-.register-prompt a { color: var(--accent); text-decoration: none; }
-.security-note { font-size: 0.75rem; color: var(--text-muted); margin-top: 20px; text-align: center; }
+.btn-social:hover {
+  background-color: #f0f0f0;
+}
 
-/* Responsive */
+/* REGISTRO Y NOTA DE SEGURIDAD */
+.register-prompt {
+  text-align: center;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+.register-prompt a {
+  color: var(--accent);
+  font-weight: bold;
+}
+
+.security-note {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  text-align: center;
+  margin-top: 20px;
+}
+
+/* ==========================================================================
+   RESPONSIVE
+   ========================================================================== */
+@media (max-width: 800px) {
+  .nav-menu { display: none; } /* Oculta menú en tablets/móvil */
+}
+
 @media (max-width: 480px) {
-  .navbar__links { display: none; } /* Ocultar menú en móvil muy pequeño */
+  .login-card { padding: 25px; }
   .navbar { padding: 12px 5%; }
 }
