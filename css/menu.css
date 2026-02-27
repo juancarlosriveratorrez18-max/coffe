@@ -1,72 +1,210 @@
-.container {
-    display: flex;
-    flex-wrap: wrap;       /* permite que las tarjetas salten de fila */
-    gap: 20px;
-    padding: 20px 40px;
-    justify-content: center;
+@import url('https://fonts.googleapis.com/css2?family=Righteous&family=Poppins:wght@300;400;700&family=Ribeye&display=swap');
+
+/* --- Reset y Estilos Globales --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
 }
 
-.ecard {
-    background: linear-gradient(to right, #3b141c, #5c1f2a, #7a2d3b);
-    border-radius: 15px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
-    flex: 0 1 calc(33.333% - 40px); /* 3 columnas en desktop */
-    max-width: 320px;
-    height: 420px;
+body {
+    background-color: #1a1a1a; /* Fondo oscuro profundo */
+    color: white;
+    overflow-x: hidden;
+}
+
+button { cursor: pointer; border: none; }
+img { width: 100%; border-radius: 12px; display: block; }
+ul { list-style: none; }
+a { text-decoration: none; }
+
+/* --- Header y Navegación --- */
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    background-color: #3b141c;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+}
+
+.navbar {
     display: flex;
-    flex-direction: column;
     justify-content: space-between;
-    text-align: center;
-    padding: 10px 20px 20px;
-    transition: transform 0.3s ease;
-    color: #fff;
+    align-items: center;
+    padding: 15px 2%; /* Logo corrido a la izquierda */
 }
 
-.ecard:hover {
-    transform: scale(1.05); /* efecto zoom al pasar el mouse */
+.nav-logo {
+    display: flex;
+    align-items: center;
+}
+
+.nav-text {
+    font-family: "Ribeye", cursive;
+    color: white !important;
+    font-size: 28px;
+    margin-left: 10px;
+}
+
+.nav-menu {
+    display: flex;
+    gap: 30px;
+}
+
+.nav-link {
+    color: white !important;
+    font-weight: 500;
+    font-size: 16px;
+    transition: 0.3s;
+}
+
+.nav-link:hover {
+    color: #e2750f !important;
+}
+
+/* Iconos y Carrito */
+.nav-icons {
+    display: flex;
+    align-items: center;
+    padding-right: 20px;
 }
 
 .carrito {
-    position: fixed;        /* queda fijo en la ventana */
-    top: 10px;
-    right: 30px;
-    color: #fff;
-    font-size: 22px;
+    position: relative;
+    font-size: 24px;
+    color: white;
     cursor: pointer;
+    transition: color 0.3s ease, transform 0.2s ease;
 }
 
-.carrito #contador {
+/* EFECTO NARANJA AL PASAR EL MOUSE POR EL CARRITO */
+.carrito:hover {
+    color: #e2750f;
+    transform: scale(1.1);
+}
+
+#contador {
     position: absolute;
     top: -8px;
-    right: -8px;
+    right: -10px;
     background: #e2750f;
-    color: white;
-    font-size: 12px;
-    font-weight: bold;
-    padding: 4px 7px;
+    color: white; /* El texto del número se mantiene blanco por legibilidad */
+    font-size: 11px;
+    padding: 2px 6px;
     border-radius: 50%;
+    font-weight: bold;
 }
 
-/* Tablets (máximo 768px) */
-@media (max-width: 768px) {
-    .carrito {
-        position: relative; /* Pasa a estar dentro del navbar */
-        top: 0;
-        right: 0;
-    }
-
-    .menu-icon {
-        display: flex; /* Se hace visible el icono de barras */
-    }
-
-    .ecard {
-        flex: 0 1 calc(50% - 20px); /* 2 columnas */
-    }
+/* --- Título de Sección --- */
+.main-title {
+    text-align: center;
+    margin-top: 120px;
+    font-size: 35px;
+    font-family: 'Righteous', cursive;
+    text-transform: uppercase;
 }
 
-/* Móviles (máximo 480px) */
-@media (max-width: 480px) {
-    .ecard {
-        flex: 0 1 100%; /* 1 columna (toda la pantalla) */
+.main-title::after {
+    content: "";
+    display: block;
+    width: 50px;
+    height: 3px;
+    background: #e2750f;
+    margin: 10px auto;
+}
+
+/* --- Contenedor de Productos --- */
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 25px;
+    justify-content: center;
+    padding: 40px 5%;
+    max-width: 1600px;
+    margin: 0 auto;
+}
+
+/* --- Tarjetas (Ecard) con Degradado Profundo --- */
+.ecard {
+    /* Degradado exacto: Granate arriba -> Café medio -> Negro abajo */
+    background: linear-gradient(180deg, #5c181f 0%, #3b141c 45%, #1a0a0d 100%);
+    border-radius: 35px;
+    
+    /* Disposición en 4 columnas */
+    flex: 1 1 calc(25% - 25px); 
+    min-width: 270px;
+    max-width: 320px;
+    
+    padding: 30px 20px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 0 15px rgba(226, 117, 15, 0.1);
+    transition: 0.3s ease;
+}
+
+.ecard:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 20px rgba(226, 117, 15, 0.2);
+}
+
+.ecard h2 {
+    font-weight: 700;
+    margin: 20px 0 10px;
+    font-size: 22px;
+}
+
+.ecard p {
+    font-size: 14px;
+    margin-bottom: 25px;
+    line-height: 1.4;
+    color: #efefef;
+    flex-grow: 1; /* Alinea los botones al final */
+}
+
+/* --- Botones Naranja Mate --- */
+.btn-group {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+}
+
+.btn-orange {
+    background-color: #d97d26; /* Naranja sólido de la imagen */
+    color: black;              /* Texto oscuro según imagen */
+    padding: 12px 0;
+    border-radius: 10px;
+    font-weight: 700;
+    font-size: 14px;
+    width: 125px;              /* Botones compactos y simétricos */
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.btn-orange:hover {
+    background-color: #e2750f;
+    transform: translateY(-2px);
+}
+
+/* --- Responsive --- */
+
+/* 3 Columnas en pantallas medianas */
+@media (max-width: 1100px) {
+    .ecard { flex: 1 1 calc(33.33% - 25px); }
+}
+
+/* 2 Columnas en tablets */
+@media (max-width: 800px) {
+    .ecard { flex: 1 1 calc(50% - 25px); }
+    .nav-menu { display: none; } /* Ocultar menú para versión móvil */
+}
+
+/* 1 Columna en móviles */
+@media (max-width: 500px) {
+    .ecard { 
+        flex: 1 1 100%; 
+        max-width: 100%;
     }
 }
