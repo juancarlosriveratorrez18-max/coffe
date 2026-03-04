@@ -1,0 +1,165 @@
+/* --- Reset y Estilos Globales --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: #1a1a1a; /* Fondo oscuro igual al menú */
+    color: white;
+    overflow-x: hidden;
+}
+
+/* --- Header y Navegación (IGUAL AL MENÚ) --- */
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    background-color: #3b141c;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 2%;
+}
+
+.nav-logo {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+}
+
+.nav-text {
+    font-family: "Ribeye", cursive;
+    color: white !important;
+    font-size: 28px;
+    margin-left: 10px;
+}
+
+.nav-menu {
+    display: flex;
+    gap: 30px;
+    list-style: none;
+}
+
+.nav-link {
+    color: white !important;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 16px;
+    transition: 0.3s;
+}
+
+.nav-link:hover, .nav-link.active {
+    color: #e2750f !important;
+}
+
+/* Iconos y Carrito */
+.nav-icons {
+    display: flex;
+    align-items: center;
+    padding-right: 20px;
+}
+
+.carrito {
+    position: relative;
+    font-size: 24px;
+    color: white;
+    cursor: pointer;
+    transition: color 0.3s ease, transform 0.2s ease;
+}
+
+.carrito:hover {
+    color: #e2750f;
+    transform: scale(1.1);
+}
+
+#contador {
+    position: absolute;
+    top: -8px;
+    right: -10px;
+    background: #e2750f;
+    color: white;
+    font-size: 11px;
+    padding: 2px 6px;
+    border-radius: 50%;
+    font-weight: bold;
+}
+
+/* --- Sección Galería --- */
+.galeria-section {
+    padding: 130px 5% 60px; /* Padding superior para no quedar debajo de la barra fija */
+    text-align: center;
+}
+
+.titulo {
+    font-family: 'Righteous', cursive;
+    font-size: 35px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.linea {
+    width: 50px;
+    height: 3px;
+    background: #e2750f;
+    margin: 10px auto 40px;
+}
+
+/* Grid de Imágenes */
+.grid-galeria {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.imagen {
+    position: relative;
+    overflow: hidden;
+    border-radius: 14px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+.imagen img {
+    width: 100%;
+    height: 280px; 
+    object-fit: cover;
+    display: block;
+    transition: transform 0.5s ease;
+}
+
+.imagen:hover img {
+    transform: scale(1.1);
+}
+
+/* --- Responsive --- */
+
+/* 2 Columnas en Tablets */
+@media (max-width: 900px) {
+    .grid-galeria {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .nav-menu {
+        display: none; /* Ocultar menú en móviles según tu primer código */
+    }
+}
+
+/* 1 Columna en Móviles */
+@media (max-width: 600px) {
+    .grid-galeria {
+        grid-template-columns: 1fr;
+    }
+    .titulo {
+        font-size: 28px;
+    }
+}

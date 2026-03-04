@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SITIO DE CAFÉ - CONTÁCTENOS</title>
+    <link href="https://fonts.googleapis.com/css2?family=Righteous&family=Poppins:wght@300;400;700&family=Ribeye&family=Miniver&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/bdc4e23805.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="./css/contacto.css">
+</head>
+<body>
+
+    <header>
+        <nav class="navbar">
+            <a href="index.html" class="nav-logo">
+                <span class="logo-emoji">☕</span>
+                <span class="nav-text">Coffee</span>
+            </a>
+
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="menu.html" class="nav-link">Menu</a></li>
+                <li><a href="galeria.html" class="nav-link">Galería</a></li>
+                <li><a href="contacto.html" class="nav-link active">Contáctenos</a></li>
+            </ul>
+
+            <div class="nav-icons">
+                <div class="carrito" onclick="window.location.href='carrito.html'">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span id="contador">0</span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="contactenos-section">
+        <h1 class="contactenos-title">CONTACTENOS</h1>
+        <div class="linea"></div>
+
+        <div class="contactenos-container">
+            <div class="contactenos-info">
+                <div class="info-card">
+                    <ul>
+                        <li><i class="fa-solid fa-map-location-dot"></i> 123 Camsite avenue, wil, CA 51425</li>
+                        <li><i class="fa-solid fa-envelope"></i> info@coffeshopwebsite.com</li>
+                        <li><i class="fa-solid fa-phone"></i> (123) 4434-4221</li>
+                        <li><i class="fa-solid fa-clock"></i> Monday - Friday: 9:00 AM - 5:00 PM</li>
+                        <li><i class="fa-solid fa-clock"></i> Saturday: 10:00 AM - 3:00 PM</li>
+                        <li><i class="fa-solid fa-clock"></i> Sunday: Closed</li>
+                        <li><i class="fa-solid fa-globe"></i> www.coffeshopweb.com</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="contactenos-form">
+                <form>
+                    <input type="text" placeholder="TU NOMBRE" required>
+                    <input type="email" placeholder="TU GMAIL" required>
+                    <textarea placeholder="DEJA UN MENSAJE" rows="6" required></textarea>
+                    <button type="submit" class="btn-send">Enviar</button>
+                </form>
+            </div>
+        </div>
+    </main>
+
+</body>
+</html>

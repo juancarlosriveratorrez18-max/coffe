@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SITIO DE CAFÉ - GALERÍA</title>
+    <link rel="stylesheet" href="./css/galeria.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Righteous&family=Poppins:wght@300;400;700&family=Ribeye&family=Miniver&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/bdc4e23805.js" crossorigin="anonymous"></script>
+</head>
+<body>
+
+    <header>
+        <nav class="navbar">
+            <a href="index.html" class="nav-logo">
+                <span class="logo-emoji">☕</span>
+                <span class="nav-text">Coffee</span>
+            </a>
+
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="menu.html" class="nav-link">Menu</a></li>
+                <li><a href="galeria.html" class="nav-link active">Galería</a></li>
+                <li><a href="contacto.html" class="nav-link">Contáctenos</a></li>
+            </ul>
+
+            <div class="nav-icons">
+                <div class="carrito" onclick="window.location.href='carrito.html'">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span id="contador">0</span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="galeria-section">
+        <h1 class="titulo">GALERIA</h1>
+        <div class="linea"></div>
+
+        <div class="grid-galeria">
+            <div class="imagen">
+                <img src="https://images.unsplash.com/photo-1561758033-d89a9ad46330?q=80&w=1170&auto=format&fit=crop" alt="Café 1">
+            </div>
+
+            <div class="imagen">
+                <img src="https://plus.unsplash.com/premium_photo-1672498213874-6532cb5703b2?q=80&w=1170&auto=format&fit=crop" alt="Café 2">
+            </div>
+
+            <div class="imagen">
+                <img src="https://images.unsplash.com/photo-1633945488458-f8cc1f3a0144?q=80&w=1170&auto=format&fit=crop" alt="Café 3">
+            </div>
+
+            <div class="imagen">
+                <img src="https://images.unsplash.com/photo-1551504734-5ee1c4a1479b?q=80&w=1170&auto=format&fit=crop" alt="Café 4">
+            </div>
+
+            <div class="imagen">
+                <img src="https://images.unsplash.com/photo-1626700051175-6818013e1d4f?q=80&w=764&auto=format&fit=crop" alt="Café 5">
+            </div>
+
+            <div class="imagen">
+                <img src="https://images.unsplash.com/photo-1541658016709-82535e94bc69?q=80&w=1169&auto=format&fit=crop" alt="Café 6">
+            </div>
+        </div>
+    </main>
+
+</body>
+</html>

@@ -1,0 +1,223 @@
+/* --- Reset y Estilos Globales --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: #1a1a1a; /* Fondo oscuro unificado */
+    color: white;
+    overflow-x: hidden;
+}
+
+/* --- Header y Navegación (IGUAL AL MENÚ Y GALERÍA) --- */
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    background-color: #3b141c;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 2%;
+}
+
+.nav-logo {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+}
+
+.nav-text {
+    font-family: "Ribeye", cursive;
+    color: white !important;
+    font-size: 28px;
+    margin-left: 10px;
+}
+
+.nav-menu {
+    display: flex;
+    gap: 30px;
+    list-style: none;
+}
+
+.nav-link {
+    color: white !important;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 16px;
+    transition: 0.3s;
+}
+
+.nav-link:hover, .nav-link.active {
+    color: #e2750f !important;
+}
+
+.nav-icons {
+    display: flex;
+    align-items: center;
+    padding-right: 20px;
+}
+
+.carrito {
+    position: relative;
+    font-size: 24px;
+    color: white;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.carrito:hover {
+    color: #e2750f;
+    transform: scale(1.1);
+}
+
+#contador {
+    position: absolute;
+    top: -8px;
+    right: -10px;
+    background: #e2750f;
+    color: white;
+    font-size: 11px;
+    padding: 2px 6px;
+    border-radius: 50%;
+    font-weight: bold;
+}
+
+/* --- Sección Contáctenos --- */
+.contactenos-section {
+    padding: 130px 5% 60px; /* Espacio para la navbar fija */
+    text-align: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.contactenos-title {
+    font-family: 'Righteous', cursive;
+    font-size: 35px;
+    text-transform: uppercase;
+    color: white;
+}
+
+.linea {
+    width: 50px;
+    height: 3px;
+    background: #e2750f;
+    margin: 10px auto 40px;
+}
+
+.contactenos-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+    gap: 50px;
+    margin-top: 20px;
+}
+
+/* --- Tarjeta de Información --- */
+.contactenos-info {
+    flex: 1;
+}
+
+.info-card {
+    background: linear-gradient(180deg, #5c181f 0%, #3b141c 100%);
+    padding: 40px;
+    border-radius: 35px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    text-align: left;
+    height: 100%;
+}
+
+.info-card ul {
+    list-style: none;
+}
+
+.info-card ul li {
+    margin-bottom: 25px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    font-size: 0.95rem;
+    color: #efefef;
+}
+
+.info-card ul li i {
+    color: #e2750f; /* Iconos en naranja */
+    font-size: 1.3rem;
+    min-width: 30px;
+}
+
+.footer-phrase {
+    margin-top: 30px;
+    font-family: 'Miniver', cursive;
+    font-size: 2.5rem;
+    color: #e2750f;
+}
+
+/* --- Formulario --- */
+.contactenos-form {
+    flex: 1;
+}
+
+.contactenos-form form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    height: 100%;
+}
+
+.contactenos-form input, 
+.contactenos-form textarea {
+    padding: 18px 20px;
+    background: #2a2a2a;
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 15px;
+    font-size: 1rem;
+    color: white;
+    outline: none;
+    transition: 0.3s;
+}
+
+.contactenos-form input:focus, 
+.contactenos-form textarea:focus {
+    border-color: #e2750f;
+    box-shadow: 0 0 10px rgba(226, 117, 15, 0.2);
+}
+
+.btn-send {
+    background-color: #d97d26; /* Naranja mate de tus botones de menú */
+    color: black;
+    border: none;
+    padding: 15px;
+    border-radius: 12px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn-send:hover {
+    background-color: #e2750f;
+    transform: translateY(-3px);
+}
+
+/* --- Responsive --- */
+@media (max-width: 900px) {
+    .contactenos-container {
+        flex-direction: column;
+    }
+    .nav-menu {
+        display: none;
+    }
+    .contactenos-section {
+        padding-top: 100px;
+    }
+}

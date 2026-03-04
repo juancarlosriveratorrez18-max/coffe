@@ -25,7 +25,7 @@ header {
     top: 0;
     width: 100%;
     z-index: 1000;
-    background-color: #3b141c;
+    background-color: #3b141c; /* Granate oscuro */
     box-shadow: 0 4px 10px rgba(0,0,0,0.5);
 }
 
@@ -33,7 +33,7 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 15px 2%; /* Logo corrido a la izquierda */
+    padding: 15px 5%;
 }
 
 .nav-logo {
@@ -48,6 +48,10 @@ header {
     margin-left: 10px;
 }
 
+.logo-emoji {
+    font-size: 24px;
+}
+
 .nav-menu {
     display: flex;
     gap: 30px;
@@ -60,26 +64,24 @@ header {
     transition: 0.3s;
 }
 
-.nav-link:hover {
-    color: #e2750f !important;
+.nav-link:hover, .nav-link.active {
+    color: #e2750f !important; /* Naranja al pasar el mouse */
 }
 
 /* Iconos y Carrito */
 .nav-icons {
     display: flex;
     align-items: center;
-    padding-right: 20px;
 }
 
 .carrito {
     position: relative;
-    font-size: 24px;
+    font-size: 22px;
     color: white;
     cursor: pointer;
-    transition: color 0.3s ease, transform 0.2s ease;
+    transition: 0.3s ease;
 }
 
-/* EFECTO NARANJA AL PASAR EL MOUSE POR EL CARRITO */
 .carrito:hover {
     color: #e2750f;
     transform: scale(1.1);
@@ -90,7 +92,7 @@ header {
     top: -8px;
     right: -10px;
     background: #e2750f;
-    color: white; /* El texto del número se mantiene blanco por legibilidad */
+    color: white;
     font-size: 11px;
     padding: 2px 6px;
     border-radius: 50%;
@@ -100,111 +102,131 @@ header {
 /* --- Título de Sección --- */
 .main-title {
     text-align: center;
-    margin-top: 120px;
-    font-size: 35px;
+    margin-top: 130px; /* Espacio para que no lo tape la navbar */
+    font-size: 40px;
     font-family: 'Righteous', cursive;
     text-transform: uppercase;
+    letter-spacing: 2px;
 }
 
 .main-title::after {
     content: "";
     display: block;
-    width: 50px;
-    height: 3px;
+    width: 60px;
+    height: 4px;
     background: #e2750f;
     margin: 10px auto;
 }
 
-/* --- Contenedor de Productos --- */
+/* --- Contenedor de Productos (Grid de 3 columnas) --- */
 .container {
     display: flex;
     flex-wrap: wrap;
-    gap: 25px;
+    gap: 35px; 
     justify-content: center;
-    padding: 40px 5%;
-    max-width: 1600px;
+    padding: 40px 5% 80px;
+    max-width: 1300px;
     margin: 0 auto;
 }
 
-/* --- Tarjetas (Ecard) con Degradado Profundo --- */
+/* --- Tarjetas (Ecard) --- */
 .ecard {
-    /* Degradado exacto: Granate arriba -> Café medio -> Negro abajo */
+    /* Degradado: Granate -> Café -> Negro */
     background: linear-gradient(180deg, #5c181f 0%, #3b141c 45%, #1a0a0d 100%);
     border-radius: 35px;
     
-    /* Disposición en 4 columnas */
-    flex: 1 1 calc(25% - 25px); 
-    min-width: 270px;
-    max-width: 320px;
+    /* Configuración para 3 columnas exactas */
+    flex: 1 1 calc(33.333% - 40px); 
+    min-width: 300px; 
+    max-width: 380px; 
     
-    padding: 30px 20px;
+    padding: 25px;
     display: flex;
     flex-direction: column;
     text-align: center;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    box-shadow: 0 0 15px rgba(226, 117, 15, 0.1);
-    transition: 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
 .ecard:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 5px 20px rgba(226, 117, 15, 0.2);
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(226, 117, 15, 0.2);
+    border-color: rgba(226, 117, 15, 0.3);
+}
+
+.ecard img {
+    height: 200px;
+    object-fit: contain; /* Mantiene la forma de tus bebidas/comidas */
+    margin-bottom: 15px;
+    transition: 0.4s;
+}
+
+.ecard:hover img {
+    transform: scale(1.05);
 }
 
 .ecard h2 {
     font-weight: 700;
-    margin: 20px 0 10px;
+    margin: 10px 0;
     font-size: 22px;
+    color: #fff;
 }
 
 .ecard p {
     font-size: 14px;
     margin-bottom: 25px;
-    line-height: 1.4;
-    color: #efefef;
-    flex-grow: 1; /* Alinea los botones al final */
+    line-height: 1.5;
+    color: #d1d1d1;
+    flex-grow: 1; /* Empuja los botones hacia abajo para que todos queden alineados */
 }
 
-/* --- Botones Naranja Mate --- */
+/* --- Botones --- */
 .btn-group {
     display: flex;
-    gap: 15px;
+    gap: 12px;
     justify-content: center;
 }
 
 .btn-orange {
-    background-color: #d97d26; /* Naranja sólido de la imagen */
-    color: black;              /* Texto oscuro según imagen */
-    padding: 12px 0;
-    border-radius: 10px;
+    background-color: #d97d26; /* Naranja mate */
+    color: #1a1a1a; 
+    padding: 12px 15px;
+    border-radius: 12px;
     font-weight: 700;
-    font-size: 14px;
-    width: 125px;              /* Botones compactos y simétricos */
-    transition: background-color 0.3s, transform 0.2s;
+    font-size: 13px;
+    flex: 1; /* Hace que ambos botones tengan el mismo ancho */
+    transition: 0.3s;
+    text-transform: uppercase;
 }
 
 .btn-orange:hover {
     background-color: #e2750f;
+    color: white;
     transform: translateY(-2px);
 }
 
 /* --- Responsive --- */
 
-/* 3 Columnas en pantallas medianas */
-@media (max-width: 1100px) {
-    .ecard { flex: 1 1 calc(33.33% - 25px); }
+/* 2 Columnas en Tablets */
+@media (max-width: 1024px) {
+    .ecard {
+        flex: 1 1 calc(50% - 40px);
+    }
 }
 
-/* 2 Columnas en tablets */
-@media (max-width: 800px) {
-    .ecard { flex: 1 1 calc(50% - 25px); }
-    .nav-menu { display: none; } /* Ocultar menú para versión móvil */
-}
-
-/* 1 Columna en móviles */
-@media (max-width: 500px) {
-    .ecard { 
-        flex: 1 1 100%; 
-        max-width: 100%;
+/* 1 Columna en Móviles y ocultar menú */
+@media (max-width: 768px) {
+    .nav-menu {
+        display: none; /* Aquí podrías implementar un menú hamburguesa luego */
+    }
+    
+    .ecard {
+        flex: 1 1 100%;
+        max-width: 400px;
+    }
+    
+    .main-title {
+        font-size: 30px;
     }
 }

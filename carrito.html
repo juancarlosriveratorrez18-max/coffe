@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Coffee – Tu Carrito</title>
+    <link rel="stylesheet" href="./css/carrito.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Righteous&family=Poppins:wght@300;400;700&family=Ribeye&display=swap" rel="stylesheet"/>
+    <script src="https://kit.fontawesome.com/bdc4e23805.js" crossorigin="anonymous"></script>
+</head>
+<body>
+
+    <header>
+        <nav class="navbar">
+            <a href="index.html" class="nav-logo">
+                <span class="logo-emoji">☕</span>
+                <span class="nav-text">Coffee</span>
+            </a>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="menu.html" class="nav-link">Menu</a></li>
+                <li><a href="galeria.html" class="nav-link">Galería</a></li>
+                <li><a href="contacto.html" class="nav-link">Contáctenos</a></li>
+            </ul>
+            <div class="nav-icons">
+                <a href="login.html" class="nav-login" style="color: white; margin-right: 15px;"><i class="fa-regular fa-user"></i></a>
+                <div class="carrito-icon active">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span id="contador">0</span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="carrito-container">
+        <div class="header-section">
+            <i class="fas fa-shopping-cart cart-main-icon"></i>
+            <h1>Tu Carrito</h1>
+            <p>Revisa tus productos antes de finalizar la compra</p>
+        </div>
+
+        <div class="carrito-content">
+            <div class="cart-status-card">
+                <div class="empty-state">
+                    <i class="fas fa-shopping-basket"></i>
+                    <h2>Tu carrito está vacío</h2>
+                    <p>¡Descubre productos increíbles y comienza tu compra!</p>
+                    <a href="menu.html" class="btn-explorar">
+                        <i class="fas fa-search"></i> Explorar Productos
+                    </a>
+                </div>
+            </div>
+
+            <aside class="cart-summary">
+                <div class="summary-card">
+                    <h3><i class="fas fa-file-invoice-dollar"></i> Resumen del Pedido</h3>
+                    <div class="summary-line">
+                        <span>Subtotal</span>
+                        <span>$0</span>
+                    </div>
+                    <div class="summary-line">
+                        <span>Envío</span>
+                        <span class="free-text">Gratis</span>
+                    </div>
+                    <div class="summary-total">
+                        <span>Total</span>
+                        <span>$0</span>
+                    </div>
+
+                    <hr class="divider">
+
+                    <h3><i class="fas fa-map-marker-alt"></i> Información de Envío</h3>
+                    <form class="shipping-form">
+                        <div class="input-group">
+                            <label>Dirección completa</label>
+                            <input type="text" placeholder="Ej: Calle 123 #45-67">
+                        </div>
+                        <div class="row">
+                            <div class="input-group">
+                                <label>Ciudad</label>
+                                <input type="text" placeholder="Bogotá">
+                            </div>
+                            <div class="input-group">
+                                <label>Código Postal</label>
+                                <input type="text" placeholder="110111">
+                            </div>
+                        </div>
+                        <div class="input-group">
+                            <label>Método de pago</label>
+                            <select>
+                                <option>Efectivo contra entrega</option>
+                                <option>Tarjeta de Crédito / Débito</option>
+                                <option>Transferencia Bancaria</option>
+                            </select>
+                        </div>
+
+                        <button type="button" class="btn-finalizar">
+                            <i class="fas fa-check"></i> Finalizar Compra
+                        </button>
+                    </form>
+
+                    <div class="trust-badges">
+                        <p><i class="fas fa-shield-alt"></i> Compra segura y protegida</p>
+                        <p><i class="fas fa-truck"></i> Envío gratis en compras +$100.000</p>
+                        <p><i class="fas fa-headset"></i> Atención al cliente 24/7</p>
+                    </div>
+                </div>
+            </aside>
+        </div>
+    </main>
+
+</body>
+</html>

@@ -1,0 +1,73 @@
+:root {
+  --bg-main:      #1a1a1a;
+  --bg-navbar:    #3b141c; /* Granate Navbar */
+  --bg-card:      #4a1e1e; /* Fondo Card */
+  --bg-input:     #c8a8a8; /* Gris/Rosa Input */
+  --accent:       #e2750f; /* Naranja Mate */
+  --accent-hover: #ff8c1a;
+  --text-muted:   #c8a8a8;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
+
+body { background-color: var(--bg-main); color: white; min-height: 100vh; overflow-x: hidden; }
+
+/* --- Navbar --- */
+header {
+  position: fixed; top: 0; width: 100%; z-index: 1000;
+  background-color: var(--bg-navbar); box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+}
+
+.navbar { display: flex; justify-content: space-between; align-items: center; padding: 15px 5%; }
+.nav-logo { display: flex; align-items: center; text-decoration: none; }
+.nav-text { font-family: 'Ribeye', cursive; color: white !important; font-size: 28px; margin-left: 10px; }
+.nav-menu { display: flex; gap: 25px; list-style: none; }
+.nav-link { color: white !important; text-decoration: none; transition: 0.3s; }
+.nav-link:hover { color: var(--accent) !important; }
+.nav-icons { display: flex; align-items: center; gap: 15px; }
+.carrito { position: relative; font-size: 22px; cursor: pointer; }
+#contador { position: absolute; top: -8px; right: -10px; background: var(--accent); color: white; font-size: 11px; padding: 2px 6px; border-radius: 50%; }
+
+/* --- Cards --- */
+.main { display: flex; justify-content: center; align-items: center; padding: 120px 20px 60px; min-height: 100vh; }
+
+.login-card {
+  background-color: var(--bg-card); padding: 40px; border-radius: 25px;
+  width: 100%; text-align: center; box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+
+.avatar-icon {
+  width: 65px; height: 65px; background: var(--accent); border-radius: 50%;
+  display: flex; align-items: center; justify-content: center; margin: 0 auto 15px;
+}
+
+.card-title { font-family: 'Righteous', cursive; margin-bottom: 10px; font-size: 24px; }
+.card-subtitle { color: var(--text-muted); font-size: 13px; margin-bottom: 25px; }
+
+/* --- Forms --- */
+.login-form { display: flex; flex-direction: column; gap: 15px; text-align: left; }
+.form-group label { display: block; font-size: 12px; color: #d4bfbf; margin-bottom: 5px; }
+.form-group label i { color: var(--accent); margin-right: 5px; }
+.form-group input {
+  width: 100%; background: var(--bg-input); border: none; padding: 12px;
+  border-radius: 10px; color: #1a1a1a; outline: none; font-weight: 500;
+}
+.form-group input::placeholder { color: #555; }
+
+.btn-login {
+  background: var(--accent); color: white; border: none; padding: 14px;
+  border-radius: 12px; font-weight: bold; font-size: 16px; margin-top: 10px; cursor: pointer; transition: 0.3s;
+}
+.btn-login:hover { background: var(--accent-hover); transform: translateY(-2px); }
+
+.register-prompt { font-size: 13px; color: var(--text-muted); margin-top: 20px; text-align: center; }
+.register-prompt a { color: var(--accent); text-decoration: none; font-weight: bold; }
+
+/* Divider y Social (Login) */
+.divider { display: flex; align-items: center; gap: 10px; margin: 10px 0; }
+.divider-line { flex: 1; height: 1px; background: rgba(255,255,255,0.1); }
+.divider-text { font-size: 11px; color: var(--text-muted); }
+.social-buttons { display: flex; gap: 10px; }
+.btn-social { flex: 1; background: white; border: none; padding: 10px; border-radius: 8px; font-weight: bold; cursor: pointer; font-size: 12px; }
+
+@media (max-width: 600px) { .nav-menu { display: none; } }
